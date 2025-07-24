@@ -17,7 +17,7 @@
             /* 画面中央に固定 */
             transform: translateY(-50%) translateX(13px);
             /* 中央配置と右ずらし */
-            background: #13ca5e;
+            background: #a8b9a7;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -104,7 +104,7 @@
         }
 
         h1 {
-            background: linear-gradient(135deg, #13ca5e, #0fa958);
+            background: linear-gradient(135deg, #a8b9a7, #697a69);
             color: white;
             padding: 20px;
             border-radius: 0 15px 0px 45px;
@@ -125,7 +125,7 @@
             margin-bottom: 10px;
             padding: 3px;
             font-weight: 600;
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             color: white;
             border-radius: 6px;
             font-size: 18px;
@@ -142,7 +142,7 @@
             margin-bottom: 10px;
             padding: 3px;
             font-weight: 600;
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             color: white;
             border-radius: 6px;
             font-size: 18px;
@@ -159,7 +159,7 @@
             margin-bottom: 10px;
             padding: 3px;
             font-weight: 600;
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             color: white;
             border-radius: 6px;
             font-size: 18px;
@@ -181,12 +181,12 @@
             align-items: center;
             justify-content: center;
             background: white;
-            color: #13ca5e;
+            color: #a8b9a7;
             font-weight: bold;
             font-size: 0.9em;
             border-radius: 4px;
             padding: 2px 6px;
-            border: 2px solid #13ca5e;
+            border: 2px solid #a8b9a7;
         }
 
         input[type="text"],
@@ -328,7 +328,7 @@
         }
 
         .calendar td.selected {
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             color: #fff;
         }
 
@@ -548,7 +548,7 @@
 
         .highlight-background {
             cursor: pointer;
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             padding: 10px;
             border-radius: 6px;
             font-size: 18px;
@@ -611,7 +611,7 @@
 
         input:focus,
         textarea:focus {
-            border-color: #13ca5e;
+            border-color: #a8b9a7;
             outline: none;
             box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
         }
@@ -620,7 +620,7 @@
             padding: 12px;
             border: none;
             border-radius: 6px;
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             color: #000000;
             font-size: 16px;
             cursor: pointer;
@@ -636,11 +636,11 @@
             width: 100%;
             padding: 15px;
             font-size: 18px;
-            background-color: #dc3545;
+            background-color: #a8b9a7;
         }
 
         .submit-button:hover {
-            background-color: #c82333;
+            background-color: #a8b9a7;
         }
 
         @media (max-width: 768px) {
@@ -689,7 +689,7 @@
             left: 50%;
             transform: translate(-50%, -10px);
             /* Y方向に上げる */
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             color: #fff;
             padding: 3px 12px;
             /* ボックスのパディングを縮小 */
@@ -783,7 +783,7 @@
             /* 内側に3pxのスペースをつける（中身がくっつかないように） */
             font-weight: 600;
             /* 文字を少し太くする（600は太さの目安） */
-            background-color: #13ca5e;
+            background-color: #a8b9a7;
             /* 背景の色をくすんだ緑にする */
             color: white;
             /* 文字の色を白にする */
@@ -854,9 +854,48 @@
 
         /* フォーカス時の装飾 */
         #mugwortreservationtime:focus {
-            border-color: #00a683;
+            border-color: #a8b9a7;
             outline: none;
             background-color: #f9fefc;
+        }
+
+        .info-textmemo {
+            margin-top: 0px;
+            /* 上の余白 */
+            margin-bottom: 0px;
+            /* 下に白い隙間を追加 */
+            font-size: 16px;
+            /* 見やすいサイズに調整 */
+            color: #000000;
+            line-height: 1.6;
+            /* 行間を少し広げる */
+            text-align: center;
+            word-wrap: break-word;
+            background-color: #eef9f5;
+            /* 青っぽい背景色を追加 */
+            padding: 12px;
+            /* 余白もやや広げて読みやすく */
+            border-radius: 4px;
+            width: 100%;
+            /* 横幅を横一杯に */
+            box-sizing: border-box;
+            /* パディング含めて横一杯に */
+        }
+
+        /* 携帯端末向けのレスポンシブデザイン */
+        @media (max-width: 768px) {
+            .info-textmemo {
+                font-size: 14px;
+                /* スマホでも見やすいサイズに調整 */
+                margin-top: 0px;
+                /* 上下のマージンを調整 */
+                line-height: 1.1;
+                /* 行間を少し広げて読みやすく */
+                width: 100%;
+                /* 横幅を横一杯に */
+                box-sizing: border-box;
+                /* パディング含めて横一杯に */
+            }
         }
     </style>
 </head>
@@ -872,6 +911,7 @@
 
     <div class="container">
         <h1>すずき写真事務所<br>お宮参り
+            <div class="info-text">こちらのフォームは"公式LINEから"でのみ<br>送ることができます。</div>
         </h1>
         <div class="label">お客様名<span class="required">必須</span></div>
         <input type="text" id="name" placeholder="お名前を入力してください" oninput="saveInput('name')">
@@ -882,69 +922,8 @@
         <div class="label">電話番号<span class="required">必須</span></div>
         <input type="tel" id="phone" placeholder="電話番号を入力してください" oninput="saveInput('phone')">
 
-        <div class="label">プランをお選びください<span class="required">必須</span></div>
-        <div class="visit-buttons">
-            <button type="button" id="firstVisit" onclick="selectVisit(this)">お参り同行プラン 47000円+税</button>
-            <button type="button" id="repeatVisit" onclick="selectVisit(this)">スタジオお宮参りプラン 37000円+税</button>
-            <button type="button" id="repeatVisit" onclick="selectVisit(this)">お参り同行+スタジオ2シーン 67000円+税</button>
-        </div>
-
-        <div class="labelnigyou">祈祷されるお子様<br>（お名前・月齢・性別）<span class="required">必須</span></div>
-        <textarea id="mugwortmainkid" placeholder="例：山田太郎・3ヶ月・男の子など 複数いれば全員分ご記入ください。"></textarea>
-
-        <div class="labelnigyou">付き添いご兄弟の<br>お名前、年齢、性別を<br>ご記入ください（任意）</div>
-        <textarea id="mugwortsiblinginfo" placeholder="お名前・年齢・性別をご記入ください。"></textarea>
-
-        <div class="labelnigyou">撮影に参加される方の<br>人数と続柄（任意）</div>
-        <input type="text" id="mugwortparticipants" placeholder="例：祖母2人、父、母 など">
-
-        <div class="labelnigyou">同行撮影の方は<br>お参りされる神社名（任意）</div>
-        <input type="text" id="mugwortshrinename" placeholder="神社名をご記入ください">
-
-        <div class="label">ご祈祷の予約時間（任意）</div>
-        <input type="time" id="mugwortreservationtime">
-
-        <div class="labelnigyou">生花撮影ご希望の有無<br>（スタジオのみ）（任意）</div>
-        <div class="Freshflowerphotography-buttons">
-            <button type="button" onclick="selectFreshflowerphotography(this)">有り</button>
-            <button type="button" onclick="selectFreshflowerphotography(this)">無し</button>
-            <button type="button" onclick="selectFreshflowerphotography(this)">相談したい</button>
-        </div>
-
-        <div class="labelnigyou">お支度風景撮影ご希望の有無<span class="required">必須</span></div>
-        <div class="preparationphoto-buttons">
-            <button type="button" onclick="selectpreparationphoto(this)">有り</button>
-            <button type="button" onclick="selectpreparationphoto(this)">無し</button>
-            <button type="button" onclick="selectpreparationphoto(this)">相談したい</button>
-        </div>
-
-        <div class="label">着物レンタル希望の有無<span class="required">必須</span></div>
-        <div class="kimono-buttons">
-            <button type="button" onclick="selectkimono(this)">有り</button>
-            <button type="button" onclick="selectkimono(this)">無し</button>
-            <button type="button" onclick="selectkimono(this)">相談したい</button>
-        </div>
-
-        <div class="label">お支度ご希望の有無<span class="required">必須</span></div>
-        <div class="info-text">※衣装レンタル、お支度ご希望の方には、<br>
-追って詳しいご案内をさせて頂きますので、<br>
-まずはご希望の有無のみお聞かせください。<br>
-検討中の方はその旨お伝えください。<br><br>
-
-※衣装、お支度の料金表はHPに<br>リンクがありますので、そちらをご覧ください。<br>
-交通費以外のお見積りにつきましては、<br>
-大変恐縮ですが料金表をご参照頂き、<br>
-お客様の方で計算をお願い致します。</div>
-        <div class="hairmakeup-buttons">
-            <button type="button" onclick="selecthairmakeup(this)">有り</button>
-            <button type="button" onclick="selecthairmakeup(this)">無し</button>
-            <button type="button" onclick="selecthairmakeup(this)">相談したい</button>
-        </div>
-
-
-
         <div class="highlight-background">
-            <div class="kibounitizi">希望日時<span class="required">必須</span></div>
+            <div class="kibounitizi">撮影希望日<span class="required">必須</span></div>
         </div>
 
         <!-- カスタム placeholder 表示用 -->
@@ -973,10 +952,75 @@
             <input type="datetime-local" id="date3" class="datetime-input" placeholder=" " aria-label="タップして日時を入力">
         </div>
 
-        <div class="labelContent">メッセージ<br>（質問等お気軽にご記入ください）</div>
+        <div class="label">プランをお選びください<span class="required">必須</span></div>
+        <div class="visit-buttons">
+            <button type="button" id="firstVisit" onclick="selectVisit(this)">お参り同行プラン 47000円+税</button>
+            <button type="button" id="repeatVisit" onclick="selectVisit(this)">スタジオお宮参りプラン 37000円+税</button>
+            <button type="button" id="repeatVisit" onclick="selectVisit(this)">お参り同行+スタジオ2シーン 67000円+税</button>
+        </div>
+
+        <div class="label">祈祷されるお子様<span class="required">必須</span><br>（お名前・お誕生日・性別）</div>
+        <textarea id="mugwortmainkid" placeholder="例：山田太郎・3ヶ月・男の子など 複数いれば全員分ご記入ください。"></textarea>
+
+        <div class="labelnigyou">付き添いご兄弟の<br>お名前、年齢、性別を<br>ご記入ください（任意）</div>
+        <textarea id="mugwortsiblinginfo" placeholder="お名前・年齢・性別をご記入ください。"></textarea>
+
+        <div class="labelnigyou">撮影に参加される方の<br>人数と続柄（任意）</div>
+        <input type="text" id="mugwortparticipants" placeholder="例：祖母2人、父、母 など">
+
+        <div class="labelnigyou">同行撮影の方は<br>お参りされる神社名（任意）</div>
+        <input type="text" id="mugwortshrinename" placeholder="神社名をご記入ください">
+
+        <div class="label">ご祈祷の予約時間（任意）</div>
+        <input type="time" id="mugwortreservationtime">
+
+        <div class="labelnigyou">生花撮影ご希望の有無<br>（スタジオのみ）（任意）</div>
+        <div class="Freshflowerphotography-buttons">
+            <button type="button" onclick="selectFreshflowerphotography(this)">有り</button>
+            <button type="button" onclick="selectFreshflowerphotography(this)">無し</button>
+            <button type="button" onclick="selectFreshflowerphotography(this)">相談したい</button>
+        </div>
+
+        <div class="labelnigyou">お支度風景撮影ご希望の有無<br>(オプション5,500円)<span class="required">必須</span></div>
+        <div class="preparationphoto-buttons">
+            <button type="button" onclick="selectpreparationphoto(this)">有り</button>
+            <button type="button" onclick="selectpreparationphoto(this)">無し</button>
+            <button type="button" onclick="selectpreparationphoto(this)">相談したい</button>
+        </div>
+
+        <div class="label">着物レンタル希望の有無<span class="required">必須</span></div>
+        <div class="kimono-buttons">
+            <button type="button" onclick="selectkimono(this)">有り</button>
+            <button type="button" onclick="selectkimono(this)">無し</button>
+            <button type="button" onclick="selectkimono(this)">相談したい</button>
+        </div>
+
+        <div class="label">お支度ご希望の有無<span class="required">必須</span></div>
+        <div class="hairmakeup-buttons">
+            <button type="button" onclick="selecthairmakeup(this)">有り</button>
+            <button type="button" onclick="selecthairmakeup(this)">無し</button>
+            <button type="button" onclick="selecthairmakeup(this)">相談したい</button>
+            <div class="info-textmemo">ヘアメイクさんのスケジュール確認が必要になりますので、<br>追って希望日の空き状況をお知らせします</div>
+        </div>
+
+        <div class="info-text">
+            ※衣装、お支度の料金表はHPにリンクがございます。<br>
+            大変恐縮ですが、交通費以外のお見積りにつきましては、<br>
+            各自料金表をご参照くださいますようお願い申し上げます。<br>
+            <a href="https://suzu-photo.com/wp-content/uploads/2025/04/%E6%96%99%E9%87%91%E8%A1%A82025.jpg"
+                target="_blank" rel="noopener noreferrer">
+                ■お支度料金表
+            </a><br><br>
+            <a href="https://suzu-photo.com/wp-content/uploads/2025/04/%E4%B8%83%E4%BA%94%E4%B8%89%E3%83%BB%E7%94%A3%E7%9D%80%E3%83%BB%E8%A8%AA%E5%95%8F%E7%9D%80_%E6%96%99%E9%87%91%E8%A1%A8-scaled.jpg"
+                target="_blank" rel="noopener noreferrer">
+                ■衣装レンタル料金表
+            </a>
+        </div>
+
+        <div class="labelContent">ご質問/ご相談<br>（質問等お気軽にご記入ください）</div>
         <textarea id="message" rows="4" placeholder="メッセージを入力してください"></textarea>
 
-        <button class="submit-button" onclick="submitForm()" div id="section-message">予約を行う</button>
+        <button class="submit-button" onclick="submitForm()" div id="section-message">送信</button>
     </div>
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
@@ -1070,6 +1114,19 @@
                     });
                 }
             });
+        });
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const ua = navigator.userAgent.toLowerCase();
+            const isLine = ua.includes("line");
+            const isMobile = ua.includes("iphone") || ua.includes("android");
+
+            if (isLine && isMobile) {
+                const infoText = document.querySelector('.info-text');
+                if (infoText) {
+                    infoText.style.display = 'none';
+                }
+            }
         });
 
         function formatDateTime(dateTimeString) {
