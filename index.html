@@ -897,21 +897,53 @@
                 /* パディング含めて横一杯に */
             }
         }
+        
+        .info-textmemohea {
+            margin-top: 0px;
+            /* 上の余白 */
+            margin-bottom: 0px;
+            /* 下に白い隙間を追加 */
+            font-size: 9px;
+            /* 見やすいサイズに調整 */
+            color: #000000;
+            line-height: 1.6;
+            /* 行間を少し広げる */
+            text-align: center;
+            word-wrap: break-word;
+            background-color: #eef9f5;
+            /* 青っぽい背景色を追加 */
+            padding: 12px;
+            /* 余白もやや広げて読みやすく */
+            border-radius: 4px;
+            width: 100%;
+            /* 横幅を横一杯に */
+            box-sizing: border-box;
+            /* パディング含めて横一杯に */
+        }
+
+        /* 携帯端末向けのレスポンシブデザイン */
+        @media (max-width: 768px) {
+            .info-textmemohea {
+                font-size: 9px;
+                /* スマホでも見やすいサイズに調整 */
+                margin-top: 0px;
+                /* 上下のマージンを調整 */
+                line-height: 1.1;
+                /* 行間を少し広げて読みやすく */
+                width: 100%;
+                /* 横幅を横一杯に */
+                box-sizing: border-box;
+                /* パディング含めて横一杯に */
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- 右側の追従ナビ -->
-    <div class="side-nav" id="sideNav">
-        <a href="#section-message">
-            <span>⇩</span>
-            <i class="fas fa-comment"></i>
-        </a>
-    </div>
 
     <div class="container">
-        <h1>すずき写真事務所<br>お宮参り
-            <div class="info-text">こちらのフォームは"公式LINEから"でのみ<br>送ることができます。</div>
+        <h1><span style="font-size: 18px;">すずき写真事務所</span><br>お宮参り
+            <div class="info-text">こちらのフォームは携帯専用です。<br>パソコンからは送信できません</div>
         </h1>
         <div class="label">お客様名<span class="required">必須</span></div>
         <input type="text" id="name" placeholder="お名前を入力してください" oninput="saveInput('name')">
@@ -952,55 +984,55 @@
             <input type="datetime-local" id="date3" class="datetime-input" placeholder=" " aria-label="タップして日時を入力">
         </div>
 
-        <div class="label">プランをお選びください<span class="required">必須</span></div>
+        <div class="labelContent">プランをお選びください<span class="required">必須</span></div>
         <div class="visit-buttons">
             <button type="button" id="firstVisit" onclick="selectVisit(this)">お参り同行プラン 47000円+税</button>
             <button type="button" id="repeatVisit" onclick="selectVisit(this)">スタジオお宮参りプラン 37000円+税</button>
             <button type="button" id="repeatVisit" onclick="selectVisit(this)">お参り同行+スタジオ2シーン 67000円+税</button>
         </div>
 
-        <div class="label">祈祷されるお子様<span class="required">必須</span><br>（お名前・お誕生日・性別）</div>
-        <textarea id="mugwortmainkid" placeholder="例：山田太郎・3ヶ月・男の子など 複数いれば全員分ご記入ください。"></textarea>
+        <div class="label">祈祷されるお子様<span class="required">必須</span><br>（お名前・月齢・性別）</div>
+        <textarea id="mugwortmainkid" placeholder="例：山田花子・1ヶ月(5/5生)・女の子"></textarea>
 
-        <div class="labelnigyou">付き添いご兄弟の<br>お名前、年齢、性別を<br>ご記入ください（任意）</div>
+        <div class="labelnigyou">付き添いご兄弟の<br>（お名前・年齢・性別）</div>
         <textarea id="mugwortsiblinginfo" placeholder="お名前・年齢・性別をご記入ください。"></textarea>
 
-        <div class="labelnigyou">撮影に参加される方の<br>人数と続柄（任意）</div>
+        <div class="labelnigyou">撮影に参加される方の<br>人数と続柄</div>
         <input type="text" id="mugwortparticipants" placeholder="例：祖母2人、父、母 など">
 
-        <div class="labelnigyou">同行撮影の方は<br>お参りされる神社名（任意）</div>
+        <div class="labelnigyou">同行撮影の方は<br>お参りされる神社名</div>
         <input type="text" id="mugwortshrinename" placeholder="神社名をご記入ください">
 
-        <div class="label">ご祈祷の予約時間（任意）</div>
+        <div class="labelContent">ご祈祷の予約時間</div>
         <input type="time" id="mugwortreservationtime">
 
-        <div class="labelnigyou">生花撮影ご希望の有無<br>（スタジオのみ）（任意）</div>
+        <div class="labelnigyou">生花撮影ご希望の有無<span class="required">必須</span><br>（スタジオのみ）</div>
         <div class="Freshflowerphotography-buttons">
             <button type="button" onclick="selectFreshflowerphotography(this)">有り</button>
             <button type="button" onclick="selectFreshflowerphotography(this)">無し</button>
-            <button type="button" onclick="selectFreshflowerphotography(this)">相談したい</button>
+            <button type="button" onclick="selectFreshflowerphotography(this)">検討中</button>
         </div>
 
-        <div class="labelnigyou">お支度風景撮影ご希望の有無<br>(オプション5,500円)<span class="required">必須</span></div>
+        <div class="labelnigyou">お支度風景撮影ご希望の有無<br><span style="font-size: 14px;">(オプション5,500円)</span><span class="required">必須</span></div>
         <div class="preparationphoto-buttons">
             <button type="button" onclick="selectpreparationphoto(this)">有り</button>
             <button type="button" onclick="selectpreparationphoto(this)">無し</button>
-            <button type="button" onclick="selectpreparationphoto(this)">相談したい</button>
+            <button type="button" onclick="selectpreparationphoto(this)">検討中</button>
         </div>
 
         <div class="label">着物レンタル希望の有無<span class="required">必須</span></div>
         <div class="kimono-buttons">
             <button type="button" onclick="selectkimono(this)">有り</button>
             <button type="button" onclick="selectkimono(this)">無し</button>
-            <button type="button" onclick="selectkimono(this)">相談したい</button>
+            <button type="button" onclick="selectkimono(this)">検討中</button>
         </div>
 
         <div class="label">お支度ご希望の有無<span class="required">必須</span></div>
         <div class="hairmakeup-buttons">
             <button type="button" onclick="selecthairmakeup(this)">有り</button>
             <button type="button" onclick="selecthairmakeup(this)">無し</button>
-            <button type="button" onclick="selecthairmakeup(this)">相談したい</button>
-            <div class="info-textmemo">ヘアメイクさんのスケジュール確認が必要になりますので、<br>追って希望日の空き状況をお知らせします</div>
+            <button type="button" onclick="selecthairmakeup(this)">検討中</button>
+            <div class="info-textmemohea">ヘアメイクさんのスケジュール確認が必要になりますので、<br>追って希望日の空き状況をお知らせします</div>
         </div>
 
         <div class="info-text">
@@ -1009,11 +1041,11 @@
             各自料金表をご参照くださいますようお願い申し上げます。<br>
             <a href="https://suzu-photo.com/wp-content/uploads/2025/04/%E6%96%99%E9%87%91%E8%A1%A82025.jpg"
                 target="_blank" rel="noopener noreferrer">
-                ■お支度料金表
+                <br>＞＞お支度料金表＜＜
             </a><br><br>
             <a href="https://suzu-photo.com/wp-content/uploads/2025/04/%E4%B8%83%E4%BA%94%E4%B8%89%E3%83%BB%E7%94%A3%E7%9D%80%E3%83%BB%E8%A8%AA%E5%95%8F%E7%9D%80_%E6%96%99%E9%87%91%E8%A1%A8-scaled.jpg"
                 target="_blank" rel="noopener noreferrer">
-                ■衣装レンタル料金表
+                ＞＞衣装レンタル料金表＜＜
             </a>
         </div>
 
@@ -1623,7 +1655,7 @@
                 type: 'text',
                 text: `【予約フォーム】\n≪お宮参り≫\n\n｟お名前｠\n・${formData.name}\n\n｟ご住所｠\n・${formData.Yourresidentialaddress}\n\n｟電話番号｠\n・${formData.phone}\n\n｟プラン｠\n・${formData.visitCount}\n\n｟祈祷されるお子様｠\n・${formData.mugwortmainkid}\n\n｟付き添いご兄弟｠\n・${formData.mugwortsiblinginfo}\n\n｟撮影に参加される方\n・${formData.mugwortparticipants}\n\n｟同行撮影｠\n・${formData.mugwortshrinename}\n\n｟ご祈祷の予約時間｠\n・${formData.mugwortreservationtime}\n\n｟生花撮影｠\n・${formData.FreshflowerphotographyCount}\n\n｟お支度風景｠\n・${formData.preparationphotoCount}\n\n｟着物レンタル｠\n・${formData.kimonoCount}\n\n｟お支度ご希望｠\n・${formData.hairmakeupCount}\n\n【希望日時】\n｟第一希望日｠\n${formatDate(formData.dates[0])}\n\n｟第二希望日｠\n${formatDate(formData.dates[1])}\n\n｟第三希望日｠\n${formatDate(formData.dates[2])}\n\n｟メッセージ｠\n${formData.message}`
             }]).then(() => {
-                alert('当日キャンセルは無いようにお願いいたします。');
+                alert('お問合せありがとうございます。追って担当者から返信をさせて頂きます。');
                 liff.closeWindow();
             }).catch((err) => {
                 console.error('メッセージの送信に失敗しました', err);
