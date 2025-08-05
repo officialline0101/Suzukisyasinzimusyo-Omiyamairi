@@ -118,37 +118,39 @@
             overflow: hidden;
         }
 
-.label {
-    display: block;
-    margin-top: 10px; /* ← ここを変更 */
-    margin-bottom: 10px;
-    padding: 3px;
-    font-weight: 600;
-    background-color: #a8b9a7;
-    color: white;
-    border-radius: 6px;
-    font-size: 18px;
-    text-align: center;
-    text-indent: 40px;
-    position: relative;
-    overflow: hidden;
-}
+        .label {
+            display: block;
+            margin-top: 10px;
+            /* ← ここを変更 */
+            margin-bottom: 10px;
+            padding: 3px;
+            font-weight: 600;
+            background-color: #a8b9a7;
+            color: white;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+            text-indent: 40px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.labelhidarizurasi {
-    display: block;
-    margin-top: 10px; /* ← ここを変更 */
-    margin-bottom: 10px;
-    padding: 3px;
-    font-weight: 600;
-    background-color: #a8b9a7;
-    color: white;
-    border-radius: 6px;
-    font-size: 18px;
-    text-align: center;
-    text-indent: 0px;
-    position: relative;
-    overflow: hidden;
-}
+        .labelhidarizurasi {
+            display: block;
+            margin-top: 10px;
+            /* ← ここを変更 */
+            margin-bottom: 10px;
+            padding: 3px;
+            font-weight: 600;
+            background-color: #a8b9a7;
+            color: white;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+            text-indent: 0px;
+            position: relative;
+            overflow: hidden;
+        }
 
         .labelnigyou {
             display: block;
@@ -647,17 +649,18 @@
             transform: scale(1.05);
         }
 
-.submit-button {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold; /* ← これを追加 */
-    background-color: #a8b9a7;
-}
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            /* ← これを追加 */
+            background-color: #a8b9a7;
+        }
 
-.submit-button:hover {
-    background-color: #a8b9a7;
-}
+        .submit-button:hover {
+            background-color: #a8b9a7;
+        }
 
         @media (max-width: 768px) {
             .container {
@@ -913,7 +916,7 @@
                 /* パディング含めて横一杯に */
             }
         }
-        
+
         .info-textmemohea {
             margin-top: 0px;
             /* 上の余白 */
@@ -965,7 +968,8 @@
         <input type="text" id="name" placeholder="お名前を入力してください" oninput="saveInput('name')">
 
         <div class="label">ご住所<span class="required">必須</span></div>
-        <input type="text" id="Yourresidentialaddress" placeholder="ご住所を入力してください" oninput="saveInput('Yourresidentialaddress')">
+        <input type="text" id="Yourresidentialaddress" placeholder="ご住所を入力してください"
+            oninput="saveInput('Yourresidentialaddress')">
 
         <div class="label">電話番号<span class="required">必須</span></div>
         <input type="tel" id="phone" placeholder="電話番号を入力してください" oninput="saveInput('phone')">
@@ -984,7 +988,7 @@
             <span class="placeholder" id="placeholder2">⇩タップして日時を入力⇩</span>
             <input type="date" id="date2" class="datetime-input" placeholder=" " aria-label="タップして日時を入力">
         </div>
-        <div class="label">第3希望日<span class="required">必須</span></div>
+        <div class="labelhidarizurasi">第3希望日</div>
 
         <!-- カスタム placeholder 表示用 -->
         <div class="datetime-wrapper" style="text-align: center;">
@@ -999,10 +1003,11 @@
             <button type="button" id="repeatVisit" onclick="selectVisit(this)">お参り同行+スタジオ2シーン 67000円+税</button>
         </div>
 
-        <div class="label">祈祷されるお子様<span class="required">必須</span><br>（お名前・月齢・性別）</div>
+        <div class="label">祈祷されるお子様<span class="required">必須</span><br><span style="font-size: 13px;">（お名前・月齢・性別）</span>
+        </div>
         <textarea id="mugwortmainkid" placeholder="例：山田花子・1ヶ月(5/5生)・女の子"></textarea>
 
-        <div class="labelhidarizurasi">付き添いご兄弟の<br>（お名前・年齢・性別）</div>
+        <div class="labelhidarizurasi">付き添いご兄弟の<br><span style="font-size: 13px;">（お名前・年齢・性別）</span></div>
         <textarea id="mugwortsiblinginfo" placeholder="お名前・年齢・性別をご記入ください。"></textarea>
 
         <div class="labelhidarizurasi">撮影に参加される方の人数と続柄</div>
@@ -1014,14 +1019,16 @@
         <div class="labelhidarizurasi">ご祈祷の予約時間</div>
         <input type="time" id="mugwortreservationtime">
 
-        <div class="label">生花撮影ご希望の有無<span class="required">必須</span><br>（スタジオのみ）</div>
+        <div class="label">生花撮影ご希望の有無<span class="required">必須</span><br><span style="font-size: 13px;">（スタジオのみ）</span>
+        </div>
         <div class="Freshflowerphotography-buttons">
             <button type="button" onclick="selectFreshflowerphotography(this)">有り</button>
             <button type="button" onclick="selectFreshflowerphotography(this)">無し</button>
             <button type="button" onclick="selectFreshflowerphotography(this)">検討中</button>
         </div>
 
-        <div class="labelhidarizurasi">お支度風景撮影ご希望の有無<br><span style="font-size: 14px;">(オプション5,500円)</span><span class="required">必須</span></div>
+        <div class="labelhidarizurasi">お支度風景撮影ご希望の有無<br><span style="font-size: 13px;">(オプション5,500円)</span><span
+                class="required">必須</span></div>
         <div class="preparationphoto-buttons">
             <button type="button" onclick="selectpreparationphoto(this)">有り</button>
             <button type="button" onclick="selectpreparationphoto(this)">無し</button>
@@ -1057,7 +1064,7 @@
             </a>
         </div>
 
-        <div class="labelhidarizurasi">ご質問/ご相談<br>（質問等お気軽にご記入ください）</div>
+        <div class="labelhidarizurasi">ご質問/ご相談<br><span style="font-size: 13px;">（質問等お気軽にご記入ください）</span></div>
         <textarea id="message" rows="4" placeholder="メッセージを入力してください"></textarea>
 
         <button class="submit-button" onclick="submitForm()" div id="section-message">送信</button>
