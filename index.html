@@ -221,6 +221,9 @@
 
         .visit-buttons,
         .hairmakeup-buttons,
+        .kibou1-buttons,
+        .kibou2-buttons,
+        .kibou3-buttons,
         .kimono-buttons,
         .preparationphoto-buttons,
         .Freshflowerphotography-buttons,
@@ -236,6 +239,9 @@
 
         .visit-buttons button,
         .hairmakeup-buttons button,
+        .kibou1-buttons button,
+        .kibou2-buttons button,
+        .kibou3-buttons button,
         .kimono-buttons button,
         .preparationphoto-buttons button,
         .Freshflowerphotography-buttons button,
@@ -256,6 +262,9 @@
 
         .visit-buttons button.active,
         .hairmakeup-buttons button.active,
+        .kibou1-buttons button.active,
+        .kibou2-buttons button.active,
+        .kibou3-buttons button.active,
         .kimono-buttons button.active,
         .preparationphoto-buttons button.active,
         .Freshflowerphotography-buttons button.active,
@@ -981,6 +990,15 @@
             <span class="placeholder" id="placeholder1">⇩タップして日時を入力⇩</span>
             <input type="date" id="date1" class="datetime-input" placeholder=" " aria-label="タップして日時を入力">
         </div>
+
+        <div class="label">希望時間<span class="required">必須</span></div>
+        <div class="kibou1-buttons">
+            <button type="button" id="firstkibou1" onclick="selectkibou1(this)">10時</button>
+            <button type="button" id="repeatkibou1" onclick="selectkibou1(this)">13時</button>
+            <button type="button" id="sankibou1" onclick="selectkibou1(this)">祈祷時間に合わせたい</button>
+            <button type="button" id="yonkibou1" onclick="selectkibou1(this)">相談したい</button>
+        </div>
+
         <div class="label">第2希望日<span class="required">必須</span></div>
 
         <!-- カスタム placeholder 表示用 -->
@@ -988,12 +1006,29 @@
             <span class="placeholder" id="placeholder2">⇩タップして日時を入力⇩</span>
             <input type="date" id="date2" class="datetime-input" placeholder=" " aria-label="タップして日時を入力">
         </div>
+
+        <div class="label">希望時間<span class="required">必須</span></div>
+        <div class="kibou2-buttons">
+            <button type="button" id="firstkibou2" onclick="selectkibou2(this)">10時</button>
+            <button type="button" id="repeatkibou2" onclick="selectkibou2(this)">13時</button>
+            <button type="button" id="sankibou2" onclick="selectkibou2(this)">祈祷時間に合わせたい</button>
+            <button type="button" id="yonkibou2" onclick="selectkibou2(this)">相談したい</button>
+        </div>
+
         <div class="labelhidarizurasi">第3希望日</div>
 
         <!-- カスタム placeholder 表示用 -->
         <div class="datetime-wrapper" style="text-align: center;">
             <span class="placeholder" id="placeholder3">⇩タップして日時を入力⇩</span>
             <input type="date" id="date3" class="datetime-input" placeholder=" " aria-label="タップして日時を入力">
+        </div>
+
+        <div class="labelhidarizurasi">希望時間</div>
+        <div class="kibou3-buttons">
+            <button type="button" id="firstkibou3" onclick="selectkibou3(this)">10時</button>
+            <button type="button" id="repeatkibou3" onclick="selectkibou3(this)">13時</button>
+            <button type="button" id="sankibou3" onclick="selectkibou3(this)">祈祷時間に合わせたい</button>
+            <button type="button" id="yonkibou3" onclick="selectkibou3(this)">相談したい</button>
         </div>
 
         <div class="label">プランをお選びください<span class="required">必須</span></div>
@@ -1073,6 +1108,9 @@
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
         let visitCount = '';
+        let kibou1Count = '';
+        let kibou2Count = '';
+        let kibou3Count = '';
         let hairmakeupCount = '';
         let kimonoCount = '';
         let preparationphotoCount = '';
@@ -1478,6 +1516,51 @@
         }
 
         // 訪問回数の選択（初回・リピート）
+        function selectkibou1(element) {
+            document.querySelectorAll('.kibou1-buttons button').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            kibou1Count = element.innerText;
+
+            // 選択された訪問回数に対応する時間を取得
+            selectedkibou1Time = kibou1Times[kibou1Count];
+
+            console.log('選択された訪問回数の時間:', selectedkibou1Time);
+
+            // カレンダーを更新するために取得する日付を渡す
+            fetchAvailability(currentDate);
+        }
+
+        // 訪問回数の選択（初回・リピート）
+        function selectkibou2(element) {
+            document.querySelectorAll('.kibou2-buttons button').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            kibou2Count = element.innerText;
+
+            // 選択された訪問回数に対応する時間を取得
+            selectedkibou2Time = kibou2Times[kibou2Count];
+
+            console.log('選択された訪問回数の時間:', selectedkibou2Time);
+
+            // カレンダーを更新するために取得する日付を渡す
+            fetchAvailability(currentDate);
+        }
+
+        // 訪問回数の選択（初回・リピート）
+        function selectkibou3(element) {
+            document.querySelectorAll('.kibou3-buttons button').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            kibou3Count = element.innerText;
+
+            // 選択された訪問回数に対応する時間を取得
+            selectedkibou3Time = kibou3Times[kibou3Count];
+
+            console.log('選択された訪問回数の時間:', selectedkibou3Time);
+
+            // カレンダーを更新するために取得する日付を渡す
+            fetchAvailability(currentDate);
+        }
+
+        // 訪問回数の選択（初回・リピート）
         function selectFreshflowerphotography(element) {
             document.querySelectorAll('.Freshflowerphotography-buttons button').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
@@ -1615,11 +1698,10 @@
 
             // 選択された日付と時間を取得
             const selectedDay = cell.getAttribute('data-date'); // ISO形式の日付
-            const selectedTime = cell.parentElement.firstChild.textContent; // 時間
             const date = new Date(selectedDay);
 
             // 日付部分を「○○年○○月○○日 ○○:○○」形式に変換
-            selectedFullDate = `${date.getFullYear()}年${('0' + (date.getMonth() + 1)).slice(-2)}月${('0' + date.getDate()).slice(-2)}日 ${selectedTime}`;
+            selectedFullDate = `${date.getFullYear()}年${('0' + (date.getMonth() + 1)).slice(-2)}月${('0' + date.getDate()).slice(-2)}日`;
 
             // 希望日時を即座に更新
             updateDisplayInfo();
@@ -1635,7 +1717,7 @@
                 mugwortparticipants: document.getElementById('mugwortparticipants').value.trim(),
                 mugwortshrinename: document.getElementById('mugwortshrinename').value.trim(),
                 mugwortreservationtime: document.getElementById('mugwortreservationtime').value.trim(),
-                visitCount, hairmakeupCount, kimonoCount, preparationphotoCount, FreshflowerphotographyCount,
+                visitCount, hairmakeupCount, kimonoCount, preparationphotoCount, FreshflowerphotographyCount, kibou1Count, kibou2Count, kibou3Count,
                 dates: [
                     document.getElementById('date1').value,
                     document.getElementById('date2').value,
@@ -1668,7 +1750,7 @@
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `【予約フォーム】\n≪お宮参り≫\n\n｟お名前｠\n・${formData.name}\n\n｟ご住所｠\n・${formData.Yourresidentialaddress}\n\n｟電話番号｠\n・${formData.phone}\n\n【希望日時】\n｟第一希望日｠\n${formatDate(formData.dates[0])}\n\n｟第二希望日｠\n${formatDate(formData.dates[1])}\n\n｟第三希望日｠\n${formatDate(formData.dates[2])}\n\n｟プラン｠\n・${formData.visitCount}\n\n｟祈祷されるお子様｠\n・${formData.mugwortmainkid}\n\n｟付き添いご兄弟｠\n・${formData.mugwortsiblinginfo}\n\n｟撮影に参加される方\n・${formData.mugwortparticipants}\n\n｟同行撮影｠\n・${formData.mugwortshrinename}\n\n｟ご祈祷の予約時間｠\n・${formData.mugwortreservationtime}\n\n｟生花撮影｠\n・${formData.FreshflowerphotographyCount}\n\n｟お支度風景｠\n・${formData.preparationphotoCount}\n\n｟着物レンタル｠\n・${formData.kimonoCount}\n\n｟お支度ご希望｠\n・${formData.hairmakeupCount}\n\n｟メッセージ｠\n${formData.message}`
+                text: `【予約フォーム】\n≪お宮参り≫\n\n｟お名前｠\n・${formData.name}\n\n｟ご住所｠\n・${formData.Yourresidentialaddress}\n\n｟電話番号｠\n・${formData.phone}\n\n【希望日時】\n｟第一希望日｠\n${formatDate(formData.dates[0])}\n｟希望時間1｠\n・${formData.kibou1Count}\n\n｟第二希望日｠\n${formatDate(formData.dates[1])}\n｟希望時間2｠\n・${formData.kibou2Count}\n\n｟第三希望日｠\n${formatDate(formData.dates[2])}\n｟希望時間3｠\n・${formData.kibou3Count}\n\n｟プラン｠\n・${formData.visitCount}\n\n｟祈祷されるお子様｠\n・${formData.mugwortmainkid}\n\n｟付き添いご兄弟｠\n・${formData.mugwortsiblinginfo}\n\n｟撮影に参加される方\n・${formData.mugwortparticipants}\n\n｟同行撮影｠\n・${formData.mugwortshrinename}\n\n｟ご祈祷の予約時間｠\n・${formData.mugwortreservationtime}\n\n｟生花撮影｠\n・${formData.FreshflowerphotographyCount}\n\n｟お支度風景｠\n・${formData.preparationphotoCount}\n\n｟着物レンタル｠\n・${formData.kimonoCount}\n\n｟お支度ご希望｠\n・${formData.hairmakeupCount}\n\n｟メッセージ｠\n${formData.message}`
             }]).then(() => {
                 alert('お問合せありがとうございます。追って担当者から返信をさせて頂きます。');
                 liff.closeWindow();
@@ -1686,9 +1768,7 @@
             const year = date.getFullYear();
             const month = ('0' + (date.getMonth() + 1)).slice(-2);
             const day = ('0' + date.getDate()).slice(-2);
-            const hours = ('0' + date.getHours()).slice(-2);
-            const minutes = ('0' + date.getMinutes()).slice(-2);
-            return `${year}年${month}月${day}日 ${hours}:${minutes}`;
+            return `${year}年${month}月${day}日`;
         }
     </script>
 </body>
